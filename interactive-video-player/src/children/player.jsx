@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import '../App.css';
 
 class Players extends Component {
@@ -8,13 +9,13 @@ class Players extends Component {
     }
   getElements() {
     this.togglePlay();
-    const player = document.querySelector('.player');
-    const video = player.querySelector('.viewer');
-    const progress = player.querySelector('.progress');
-    const progressBar = player.querySelector('.progress__filled');
-    const toggle = player.querySelector('.toggle');
-    const skipButtons = player.querySelectorAll('[data-skip]');
-    const ranges = player.querySelectorAll('.player__slider');
+    const player = ReactDOM.render(document.querySelector('.player'));
+    const video = ReactDOM.render(player.querySelector('.viewer'));
+    const progress = ReactDOM.render(player.querySelector('.progress'));
+    const progressBar = ReactDOM.render(player.querySelector('.progress__filled'));
+    const toggle = ReactDOM.render(player.querySelector('.toggle'));
+    const skipButtons = ReactDOM.render(player.querySelectorAll('[data-skip]'));
+    const ranges = ReactDOM.render(player.querySelectorAll('.player__slider'));
   }
 
   handleClick = (event) => {
@@ -33,5 +34,7 @@ class Players extends Component {
     );
   }
 }
+
+ReactDOM.render()
 
 module.export = Players;
